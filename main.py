@@ -1,9 +1,6 @@
-import json
 import os
 import sys
 import time
-import pm4py
-from pm4py import ocel
 import pandas as pd
 
 # DIRECTORIES
@@ -39,10 +36,7 @@ def run(directory, name):
         dae.compute_candidate_dynamic_attributes()
 
 
-
-
 def main():
-    list_of_files = {}
     for (dir_path, dir_names, filenames) in os.walk(DEFAULT_INPUT_DIR):
         for filename in filenames:
             run(dir_path, filename)
