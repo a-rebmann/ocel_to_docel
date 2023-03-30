@@ -1,0 +1,10 @@
+pm4py==2.5.1
+pandas
+openpyxl
+transformers==4.9.2
+pytorch-transformers==1.2.0
+torch==1.9.0
+tensorflow==2.7.0
+spacy
+nltk
+
