@@ -1,5 +1,5 @@
-# OCEL to D-OCEL Converter
-Converting OCEL to D-OCEL (which features dynamic object attributes according to the OCED Meta Model)
+# OCEL to DOCEL Datasets and Automated Transformation
+Tools to generate DOCEL formatted event logs and implementation of an algorithm to transform OCEL into DOCEL logs
 
 ## Setup 
 ### Requirements
