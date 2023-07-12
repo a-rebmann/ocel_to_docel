@@ -1,13 +1,12 @@
 import enum
 from pathlib import Path
 
-import pm4py.util.xes_constants as xes_const
 
-XES_NAME = xes_const.DEFAULT_NAME_KEY
-XES_CASE = 'case:' + xes_const.DEFAULT_TRACEID_KEY
-XES_RESOURCE = xes_const.DEFAULT_RESOURCE_KEY
-XES_LIFECYCLE = xes_const.DEFAULT_TRANSITION_KEY
-XES_TIME = xes_const.DEFAULT_TIMESTAMP_KEY
+XES_NAME = "concept:name"
+XES_CASE = 'case:' + XES_NAME
+XES_RESOURCE = "org:resource"
+XES_LIFECYCLE = "lifecycle:transition"
+XES_TIME = "time:timestamp"
 
 class ConceptType(enum.Enum):
     BO_NAME = 'BO'
@@ -74,7 +73,7 @@ consider_for_label_classification = [AttributeType.TEXT, AttributeType.STRING, A
                                      AttributeType.INT, AttributeType.FLAG, AttributeType.NUMERIC]
 
 const_to_tag = {"org:role": ConceptType.ACTOR_NAME, "org:group": ConceptType.ACTOR_NAME, XES_CASE: ConceptType.OTHER, "concept:instance": ConceptType.ACTION_INSTANCE,
-                xes_const.DEFAULT_RESOURCE_KEY: ConceptType.ACTOR_NAME, xes_const.DEFAULT_TRANSITION_KEY: ConceptType.ACTION_STATUS,
+                XES_RESOURCE: ConceptType.ACTOR_NAME, XES_LIFECYCLE: ConceptType.ACTION_STATUS,
                 "case:variant": ConceptType.OTHER.value,
                 "case:variant-index": ConceptType.IGNORE.value,
                 "case:creator": ConceptType.IGNORE.value

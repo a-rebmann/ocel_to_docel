@@ -14,5 +14,6 @@ model/bpe_tokenizer.pckl
 model/pytorch_model.bin
 model/config.json
 model/sec_parameters.json
+temp/
 
 
