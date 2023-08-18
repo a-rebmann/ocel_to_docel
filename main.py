@@ -53,7 +53,7 @@ def run(directory, name, transform=False, evaluate=False):
                 print(key, value)
                 vals_df = event_df[(~event_df[key].isna()) & (~event_df[key].isin(dynamic_attribute_extractor.TERMS_FOR_MISSING))][["EID", key, value]]
                 vals_df = vals_df.assign(VID=range(len(vals_df)))
-                vals_df["VID"] = vals_df["VID"].apply(lambda x: "V" + str(x))
+                vals_df["VID"] = vals_df["VID"].apply(lambda x: key + str(x))
                 values_tables[key] = vals_df
                 event_df.drop(columns=[key], inplace=True)
 
@@ -112,7 +112,7 @@ def run(directory, name, transform=False, evaluate=False):
 def main():
     for (dir_path, dir_names, filenames) in os.walk(DEFAULT_INPUT_DIR):
         for filename in filenames:
-            run(dir_path, filename, transform=True, evaluate=False)
+            run(dir_path, filename, transform=False, evaluate=True)
 
 
 def comp_excel(df1, df2):
